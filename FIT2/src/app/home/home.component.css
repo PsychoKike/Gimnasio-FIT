@@ -1,0 +1,65 @@
+#carouselExampleCaptions {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .carousel-caption{
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra al texto para más contraste */
+  }
+  
+
+  .text{
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    text-align: center;
+  }
+
+  .card-custom {
+    max-height: 800px;
+    min-height: 400px;
+    overflow: hidden;
+  }
+  
+  .card-custom img {
+    height: 400px;
+    object-fit: cover;
+  }
+  
+
+  .TamBot{
+    height: 70px;
+  }
+  
+  .boton-personalizado {
+    background-color: #f1c40f!important;
+    color: rgb(0, 0, 0) !important;
+    font-size: 18px;
+    padding: 10px 24px;
+    margin-bottom: 10px;
+  }
+  
+  .boton-personalizado:hover {
+    background-color: #ffffff!important; /* Verde más oscuro al pasar el mouse */
+  }
+  
