@@ -11,5 +11,5 @@ import { FooterComponent } from "./footer/footer.component";
 })
 export class AppComponent {
   title = 'FIT';
-  pruebas = "hola";
+  pruebas = "hola chris";
 }
