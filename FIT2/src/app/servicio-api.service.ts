@@ -9,6 +9,6 @@ export class ServicioApiService {
 
   constructor(private http: HttpClient) { };
   retornar(){
-    return this.http.get("https://gymgina.free.beeceptor.com/").pipe(take(1));
+    return this.http.get("https://pruebaccc.free.beeceptor.com").pipe(take(1));
   }
 }

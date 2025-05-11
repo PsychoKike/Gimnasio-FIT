@@ -1,0 +1,36 @@
+ .container {
+    margin-top: 20px;
+  }
+
+  h2, h3 {
+    color: #333;
+  }
+
+  p, li {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .rounded {
+    border-radius: 15px;
+  }
+
+  .shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  ul {
+    margin-left: 20px;
+  }
