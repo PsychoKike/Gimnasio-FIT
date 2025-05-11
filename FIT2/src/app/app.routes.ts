@@ -11,5 +11,6 @@ export const routes: Routes = [
     {path:'Acercade',component:AcercadeComponent},
     {path:'Contacto',component:ContactoComponent},
     {path:'instructor/:id',component:InstructorComponent},
-    {path:'**',pathMatch:'full',redirectTo:'home'}
+    {path:'**',pathMatch:'full',redirectTo:'home'},
+
 ];
