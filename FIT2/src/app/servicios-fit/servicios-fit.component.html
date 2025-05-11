@@ -1,25 +1,73 @@
-<!-- HTML Template -->
-<div class="container my-5">
-  <h2 class="text-center mb-4">Sobre Nosotros</h2>
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h3>Nuestra Historia</h3>
-      <p>En Gym FIT, nos dedicamos a promover un estilo de vida saludable a través de programas de ejercicio personalizados, clases grupales y entrenamiento de alta calidad. Fundados en 2015, hemos evolucionado para ofrecer instalaciones modernas y una comunidad dedicada al bienestar.</p>
-      <h3>¿Por qué Elegirnos?</h3>
-      <ul>
-        <li>Equipo de instructores altamente capacitados.</li>
-        <li>Instalaciones de última generación.</li>
-        <li>Clases adaptadas para todos los niveles.</li>
-        <li>Ambiente motivador y de apoyo.</li>
-      </ul>
-    </div>
-    <div class="col-md-6 text-center">
-      <img src="assets/img/sobre-nosotros.jpg" alt="Sobre Nosotros" class="img-fluid rounded shadow">
+<section id="sobre-nosotros" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Sobre Nosotros</h2>
+    <p class="lead">Bienvenidos a nuestro gimnasio, donde nos dedicamos a promover un estilo de vida saludable y activo. Contamos con instalaciones modernas, clases variadas y entrenadores capacitados para ayudarte a alcanzar tus objetivos.</p>
+    <p>En nuestro gimnasio, encontrarás actividades como Yoga, Box, Spinning, Pilates, y Zumba, además de un área completamente equipada para entrenamientos de fuerza y resistencia. Nos enorgullece brindar un ambiente inclusivo y motivador para personas de todas las edades y niveles de condición física.</p>
+    <hr>
+    <div class="formulario">
+      <h3>Registro al gimnasio</h3>
+      <form (ngSubmit)="agregarCliente()">
+        <div class="mb-3">
+          <label>Nombre:</label>
+          <input [(ngModel)]="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Edad:</label>
+          <input [(ngModel)]="edad" name="edad" type="number" min="15" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label>Membresía:</label>
+          <select [(ngModel)]="membresia" name="membresia" class="form-select" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="mensual">Mensual</option>
+            <option value="trimestral">Trimestral</option>
+            <option value="anual">Anual</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label>Actividades:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Zumba" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Yoga</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Spinning" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Box</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Pilates" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Spinning</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Boxeo" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Pilates</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Pesas" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Gym</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Pesas" [(ngModel)]="actividades" name="actividades">
+            <label class="form-check-label">Zumba</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Género:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Masculino" [(ngModel)]="genero" name="genero" required>
+            <label class="form-check-label">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" value="Femenino" [(ngModel)]="genero" name="genero" required>
+            <label class="form-check-label">Femenino</label>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Fecha de registro:</label>
+          <input [(ngModel)]="fechaRegistro" name="fechaRegistro" type="date" [min]="fechaActual" class="form-control" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Registrar</button>
+      </form>
     </div>
   </div>
-  <div class="text-center mt-4">
-    <h3>Únete a Nuestra Comunidad</h3>
-    <p>Descubre una nueva forma de entrenar y vivir con Gym FIT.</p>
-    <a href="/contacto" class="btn btn-primary">Contáctanos</a>
-  </div>
-</div>
+</section>
