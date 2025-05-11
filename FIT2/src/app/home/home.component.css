@@ -62,4 +62,20 @@
   .boton-personalizado:hover {
     background-color: #ffffff!important; /* Verde más oscuro al pasar el mouse */
   }
-  
+
+.video {
+  width: 100%;          /* Asegura que el contenedor ocupe el ancho completo */
+  display: flex;        /* Flex para centrar el contenido */
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;    /* Espaciado superior e inferior */
+  padding-bottom: 10px; /* Espacio adicional para evitar superposición con el footer */
+}
+
+.video iframe {
+  width: 80%;           /* Ancho adaptativo para mayor responsividad */
+  max-width: 560px;     /* Limita el tamaño máximo */
+  height: 315px;       /* Altura fija para mantener la proporción */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
