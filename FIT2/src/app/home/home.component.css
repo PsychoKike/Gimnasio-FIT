@@ -64,24 +64,20 @@
   }
 
 
-.container-video{
+.container-video {
    display: flex;       
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;  
-  flex-direction: column; 
-  margin-top: 30px;
+   justify-content: center;
+   align-items: center;
+   margin: 20px auto;  
+   flex-direction: column; 
+   margin-top: 30px;
+   text-align: center;
 }
 
-.video iframe {
-  max-width: 560px;     
-  height: 315px;      
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   width: 100%;        
-  display: flex;      
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;    
-  padding-bottom: 10px;
+.container-video video {
+   max-width: 100%;
+   height: auto;
+   border-radius: 30px;
+
 }
+

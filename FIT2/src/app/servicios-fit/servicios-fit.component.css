@@ -13,10 +13,16 @@
 
 
   .btn-primary {
-    background-color: #cdc006;
-    border-color: #ddff00;
+    background-color: #f0e105;
+    border-color: #e4f766a9;
     padding: 10px 20px;
     font-weight: bold;
+  }
+
+  .btn-primary:hover {
+    background-color: #62daff;
+    box-shadow: #000000 0px 0px 5px;
+    color: #000000;
   }
 
   .img-fluid {
@@ -35,3 +41,6 @@
   ul {
     margin-left: 20px;
   }
+
+
+  

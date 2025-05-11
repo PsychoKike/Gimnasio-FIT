@@ -12,5 +12,5 @@ export const routes: Routes = [
     {path:'Contacto',component:ContactoComponent},
     {path:'instructor/:id',component:InstructorComponent},
     {path:'**',pathMatch:'full',redirectTo:'home'},
-
+    
 ];
