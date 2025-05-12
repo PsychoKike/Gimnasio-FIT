@@ -60,6 +60,24 @@
   }
   
   .boton-personalizado:hover {
-    background-color: #ffffff!important; /* Verde más oscuro al pasar el mouse */
+    background-color: #ffffff!important;
   }
-  
+
+
+.container-video {
+   display: flex;       
+   justify-content: center;
+   align-items: center;
+   margin: 20px auto;  
+   flex-direction: column; 
+   margin-top: 30px;
+   text-align: center;
+}
+
+.container-video video {
+   max-width: 100%;
+   height: auto;
+   border-radius: 30px;
+
+}
+

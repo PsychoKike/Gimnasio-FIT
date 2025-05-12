@@ -1,0 +1,46 @@
+ .container {
+    margin-top: 20px;
+  }
+
+  h2, h3 {
+    color: #000000;
+  }
+
+  p, li {
+    color: #000000;
+    line-height: 1.6;
+  }
+
+
+  .btn-primary {
+    background-color: #f0e105;
+    border-color: #e4f766a9;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  .btn-primary:hover {
+    background-color: #62daff;
+    box-shadow: #000000 0px 0px 5px;
+    color: #000000;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .rounded {
+    border-radius: 15px;
+  }
+
+  .shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  ul {
+    margin-left: 20px;
+  }
+
+
+  

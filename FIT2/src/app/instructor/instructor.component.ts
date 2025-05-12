@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Servicio } from '../Servicio';
-import { ServiciosService } from '../shared/servicios.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ServicioApiService } from '../servicio-api.service';
 
 @Component({
   selector: 'app-instructor',
@@ -9,11 +9,29 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   templateUrl: './instructor.component.html',
   styleUrl: './instructor.component.css'
 })
-export class InstructorComponent {
-  @Input() instructor!:Servicio;
-  constructor(public ServicioService:ServiciosService, public activatedRoute: ActivatedRoute){
-    this.activatedRoute.params.subscribe(params=>{
-      this.instructor=ServicioService.getInstructot(params['id']);
-    })
-  }
+export class InstructorComponent implements OnInit {
+  instructor: any;
+
+  constructor(
+    private route: ActivatedRoute,
+    public servicioApiService: ServicioApiService
+  ) {}
+  array:any = [];
+
+  ngOnInit(): void {
+    console.log("Entre");
+    this.servicioApiService.retornar().subscribe({
+      
+      next: this.successRequest.bind(this),
+      error: (err) => {console.log(err)},
+    });
+
 }
+successRequest(data: any): void {
+    console.log(data);
+    this.array = data.gymServices;
+    this.instructor = this.array.find((item: any) => item.id === Number(this.route.snapshot.paramMap.get('id'))+1);
+    console.log(this.instructor);
+}
+}
+

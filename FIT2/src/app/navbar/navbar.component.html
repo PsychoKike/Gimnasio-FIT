@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary colorperz">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="images/FITLOGO.png" alt=""></a>
+      <img src="images/FITLOGO.png" alt="" [routerLink]="['/home']" style="cursor: pointer; height: 130px; width: auto; margin-left: 30px; margin-right: 40px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/serviciosFIT']" >Nuestros Servicos </a>
+            <a class="nav-link" [routerLink]="['/serviciosFIT']" >Nuestros servicos </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/Acercade']">Acerca de</a>

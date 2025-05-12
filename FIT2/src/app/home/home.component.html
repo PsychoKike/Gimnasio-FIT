@@ -64,3 +64,17 @@
       </div>
     }
   </div>
+
+
+<div class="container-video"> 
+  <div class="text">
+    <h2 class="text-center mb-4">Video de presentación</h2>
+    <p class="lead">Bienvenidos a nuestro gimnasio, donde nos dedicamos a promover un estilo de vida saludable y activo. Contamos con instalaciones modernas, clases variadas y entrenadores capacitados para ayudarte a alcanzar tus objetivos.</p>
+  </div>
+    <iframe 
+    width="560px"
+    height="315px" 
+    margin-top="20px"
+    style="box-shadow: 0 7px 30px rgb(0, 0, 0);"
+    [src]="video|domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+</div>

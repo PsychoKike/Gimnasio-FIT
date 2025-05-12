@@ -13,5 +13,6 @@ export const routes: Routes = [
     {path:'Contacto',component:ContactoComponent},
     {path:'InicioSesion',component:FormularioReactivoComponent},
     {path:'instructor/:id',component:InstructorComponent},
-    {path:'**',pathMatch:'full',redirectTo:'home'}
+    {path:'**',pathMatch:'full',redirectTo:'home'},
+    
 ];

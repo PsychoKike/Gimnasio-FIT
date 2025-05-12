@@ -1,1 +1,84 @@
-<p>servicios-fit works!</p>
+<section id="sobre-nosotros" class="py-5 bg-light text-dark">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-4 fw-bold">Sobre Nosotros</h2>
+      <p class="fs-5">Bienvenidos a nuestro gimnasio, un espacio comprometido con el bienestar físico y mental. Nos enfocamos en ofrecer un entorno moderno y dinámico, equipado con instalaciones de alta calidad y un equipo de entrenadores profesionales altamente capacitados. Nuestro objetivo es brindar un servicio integral que impulse a nuestros miembros a alcanzar sus metas de acondicionamiento físico, promoviendo un estilo de vida activo y saludable.</p>
+        <p class="fs-5">Si deseas registrarte, llena los siguientes campos para guardar la informacion y pases el dia seleccionado a concluir el registro.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="card shadow-lg border-0">
+          <div class="card-body p-5">
+            <h3 class="text-center text-primary mb-4" style="color: rgb(219, 204, 0) !important;">Registro al Gimnasio</h3>
+            <form (ngSubmit)="agregarCliente()">
+              <div class="mb-3">
+                <label class="form-label">Nombre:</label>
+                <input [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Ingrese su nombre" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Edad:</label>
+                <input [(ngModel)]="edad" name="edad" type="number" min="15" class="form-control" placeholder="Ingrese su edad" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Membresía:</label>
+                <select [(ngModel)]="membresia" name="membresia" class="form-select" required>
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="mensual">Mensual</option>
+                  <option value="trimestral">Trimestral</option>
+                  <option value="anual">Anual</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Actividades:</label>
+                <div class="d-flex flex-wrap gap-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Yoga" [(ngModel)]="actividades" name="actividades" required>
+                    <label class="form-check-label">Yoga</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Box" [(ngModel)]="actividades" name="actividades">
+                    <label class="form-check-label">Box</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Spinning" [(ngModel)]="actividades" name="actividades">
+                    <label class="form-check-label">Spinning</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Pilates" [(ngModel)]="actividades" name="actividades">
+                    <label class="form-check-label">Pilates</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Pesas" [(ngModel)]="actividades" name="actividades">
+                    <label class="form-check-label">Pesas</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="Zumba" [(ngModel)]="actividades" name="actividades">
+                    <label class="form-check-label">Zumba</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Género:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="Masculino" [(ngModel)]="genero" name="genero" required>
+                  <label class="form-check-label">Masculino</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="Femenino" [(ngModel)]="genero" name="genero" required>
+                  <label class="form-check-label">Femenino</label>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Fecha de registro:</label>
+                <input [(ngModel)]="fechaRegistro" name="fechaRegistro" type="date" [min]="fechaActual" class="form-control" required>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary w-100 py-2" style="color: black !important;" type="submit">Registrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>
