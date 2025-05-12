@@ -1,0 +1,78 @@
+<form [formGroup]="FormularioReact" class="form-container" (ngSubmit)="Subir()">
+<div class="mb-3">
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Email address</mat-label>
+    <input matInput type="email" formControlName="correo" id="exampleInputEmail1">
+  </mat-form-field>
+
+  @if (FormularioReact.get('correo')?.invalid && FormularioReact.get('correo')?.touched) {
+    @if (FormularioReact.get('correo')?.errors?.['required']) {
+      <div class="text-danger">Añade el correo</div>
+    } @else {
+      @if (FormularioReact.get('correo')?.errors?.['email']) {
+        <div class="text-danger">Correo inválido</div>
+      } @else {
+        @if (FormularioReact.get('correo')?.errors?.['pattern']) {
+          <div class="text-danger">Este correo está incompleto</div>
+        }
+      }
+    }
+  }
+</div>
+
+<div class="mb-3">
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" id="exampleInputPassword1" formControlName="contraseña">
+  </mat-form-field>
+
+  @if (FormularioReact.get('contraseña')?.invalid && FormularioReact.get('contraseña')?.touched) {
+    @if (FormularioReact.get('contraseña')?.errors?.['required']) {
+      <div class="text-danger">Añade la contraseña</div>
+    } @else {
+      @if (FormularioReact.get('contraseña')?.errors?.['minlength']) {
+        <div class="text-danger">La contraseña debe tener al menos 8 caracteres</div>
+      }
+    }
+  }
+</div>
+
+<div class="mb-3">
+  <label class="form-label d-block">Selecciona una opción</label>
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Selecciona una opción</mat-label>
+    <mat-select formControlName="OpcionArray">
+      <mat-option value="" disabled>Selecciona una opción</mat-option>
+      @for (i of opc; track $index) {
+        <mat-option [value]="i.value">{{ i.label }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  @if (FormularioReact.get('OpcionArray')?.invalid && FormularioReact.get('OpcionArray')?.touched) {
+    <div class="text-danger">Debes seleccionar una opción.</div>
+  }
+</div>
+
+  
+<div class="mb-3 mt-4">
+    <mat-form-field>
+        <mat-label>Fecha en la que ingresa</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="Calendario">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    @if (FormularioReact.get('Calendario')?.invalid && FormularioReact.get('Calendario')?.touched) {
+    @if (FormularioReact.get('Calendario')?.errors?.['required']) {
+        <div class="text-danger">Selecciona una fecha</div>
+    }
+    @if (FormularioReact.get('Calendario')?.errors?.['fechaPasada']) {
+        <div class="text-danger">La fecha no puede ser anterior a hoy</div>
+    }
+    @if (FormularioReact.get('Calendario')?.errors?.['domingoNoPermitido']) {
+        <div class="text-danger">Los domingos no trabajamos</div>
+    }
+    }
+</div>
+  <button type="submit" class="btn btn-primary" [disabled]="FormularioReact.invalid">Submit</button>
+</form>

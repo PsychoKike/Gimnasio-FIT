@@ -1,0 +1,62 @@
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  color: #000000;
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form-control:focus {
+  border-color: #def452;
+  box-shadow: 0 0 5px rgba(189, 210, 0, 0.5);
+}
+
+.text-danger {
+  color: #f44336;
+}
+
+.btn {
+  background-color: #e5ff00;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #000000;
+}
+
+
+.form-select {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.form-select:focus {
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(42, 42, 42, 0.5);
+}
+
+.colores-waos{
+  color: transparent;
+  border-color: transparent;
+  background: linear-gradient(to right, #ffcc70, #ff8177); /* Color del borde animado */
+  border-radius: 12px;
+  padding: 2px; /* Espacio para borde */
+}

@@ -15,11 +15,9 @@ export class HomeComponent {
     misServicios:Servicio[]=[];
 
     constructor(public Serv:ServiciosService){
-      console.log("Constructor de heroes");
     }
 
     ngOnInit():void{
-      console.log("ngOnInit de Heroes");
       this.misServicios=this.Serv.getServicio();
       console.log(this.misServicios);
 
