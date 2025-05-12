@@ -8,7 +8,6 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
-import { InicioSesionService } from '../shared/inicio-sesion.service';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -40,7 +39,7 @@ export class FormularioReactivoComponent {
     {correo: 'JoseKeoPension@FIT.com',contraseña:'Almohada66'}
   ];
 
-  constructor(private Rout:Router, private sessionService:InicioSesionService){
+  constructor(private Rout:Router){
 
   }
 
@@ -75,33 +74,31 @@ export class FormularioReactivoComponent {
       const opc=DatosForm.OpcionArray;
 
       const EncUser=this.usuarios.some(i=>i.correo===email&&i.contraseña===contraseña);
-
-      if(EncUser&&opc=='1'){
-        Swal.fire({
-          title: 'Inicio de sesion exitoso',
-          text: 'Bienvenido '+email,
-          icon: 'success',
-          confirmButtonText: 'Aceptar'
-        });
-        const UsuarioLogueado={
+       const UsuarioLogueado={
           correo:email,
           opc:opc,
           fecha:DatosForm.Calendario,
           Flag:true
         };
         historial.push(UsuarioLogueado);
-        this.sessionService.updateSessionState(true);
         localStorage.setItem('InicioSesion',JSON.stringify(historial));
-
-        this.Rout.navigate(['/home']);
+      if(EncUser&&opc=='1'){
+        Swal.fire({
+          title: 'Inicio de sesion exitoso',
+          text: 'Bienvenido '+email,
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        }).then(()=>{
+          this.Rout.navigate(['/home']).then(() => {
+            location.reload();
+          });
+        });
       }else{
           Swal.fire({
             title: 'Error',
             text: 'Email o contraseña erroneos',
             icon: 'error',
             confirmButtonText: 'Aceptar'
-          }).then(()=>{
-            this.FormularioReact.reset();
           });
       }
     }

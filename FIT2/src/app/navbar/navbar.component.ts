@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { InicioSesionService } from '../shared/inicio-sesion.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,25 +8,25 @@ import { InicioSesionService } from '../shared/inicio-sesion.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  RecUser: any = null; // Esta variable nos ayudará a recuperar el usuario
   correo!: string;
-  FlagInicio: boolean = false;
+  FlagInicio: boolean=false;
 
-  constructor(private sessionService: InicioSesionService) {}
+ngOnInit(): void {
+  const historial = JSON.parse(localStorage.getItem('InicioSesion') || '[]');
+  this.RecUser = historial[historial.length - 1]; // Último usuario que inició sesión
+  this.correo = this.RecUser.correo; // Aquí sí obtienes el correo correctamente
+  this.FlagInicio=this.RecUser.Flag;
+  console.log(this.FlagInicio,historial.length);
 
-  ngOnInit(): void {
-    // Nos suscribimos al estado de la sesión
-    this.sessionService.getSessionState().subscribe(flag => {
-      this.FlagInicio = flag;
-      // Recuperamos el correo solo si hay sesión
-      if (flag) {
-        const historial = JSON.parse(localStorage.getItem('InicioSesion') || '[]');
-        this.correo = historial[historial.length - 1].correo;
-      }
-    });
-  }
+}
 
-  cerrarSesion(): void {
-    this.sessionService.updateSessionState(false); // Actualizamos el estado de la sesión en el servicio
-    this.correo = ''; // Limpiamos el correo
-  }
+cerrarSesion():void{
+  const historial = JSON.parse(localStorage.getItem('InicioSesion') || '[]');
+  historial[historial.length - 1].Flag=false;
+  localStorage.setItem('InicioSesion',JSON.stringify(historial));
+  this.FlagInicio=false;
+  location.reload();
+}
+
 }
