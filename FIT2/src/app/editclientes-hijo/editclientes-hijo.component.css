@@ -1,0 +1,81 @@
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+input.form-control {
+  border-radius: 4px;
+}
+
+.row.g-3 {
+  margin-bottom: 15px;
+}
+
+.col-md-3, .col-md-4 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-group .btn {
+  margin-left: 10px;
+}
+
+.btn-outline-warning {
+  color: #ffa500;
+  border-color: #ffa500;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffa500;
+  color: white;
+}
+
+.btn-outline-success {
+  color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.card .form-control[readonly] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.card .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.card .col-12 {
+  margin-top: 20px;
+}
+
+.card .col-auto {
+  margin-top: 5px;
+}

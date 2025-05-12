@@ -8,6 +8,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -19,6 +20,7 @@ import { Router } from '@angular/router';
     MatNativeDateModule,
     MatOptionModule,
     MatSelectModule,
+    MatSlideToggleModule
   ],
   templateUrl: './formulario-reactivo.component.html',
   styleUrl: './formulario-reactivo.component.css',
@@ -34,9 +36,9 @@ export class FormularioReactivoComponent {
   ];
 
   usuarios = [
-    {correo:'Enrique@FIT.com', contraseña:'Pickote117'},
-    {correo:'Christian@FIT.com',contraseña:'Tiburoncin22'},
-    {correo: 'JoseKeoPension@FIT.com',contraseña:'Almohada66'}
+    {nombre:'Enrique Amador Macias',correo:'Enrique@FIT.com', contraseña:'Pickote117'},
+    {nombre:'Christian Issac Martinez Sanchez',correo:'Christian@FIT.com',contraseña:'Tiburoncin22'},
+    {nombre:'Jose Keo Espinoza',correo: 'JoseKeoPension@FIT.com',contraseña:'Almohada66'}
   ];
 
   constructor(private Rout:Router){
@@ -44,6 +46,12 @@ export class FormularioReactivoComponent {
   }
 
   FormularioReact = new FormGroup({
+    nombre: new FormControl('',[
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(50),
+      Validators.pattern(/^[a-zA-Z\s]+$/) // Sin caracteres especiales
+    ]),
     correo: new FormControl('', [
       Validators.required,
       Validators.email,
@@ -59,6 +67,9 @@ export class FormularioReactivoComponent {
     Calendario: new FormControl('', [
       Validators.required,
       ValidarFecha
+    ]),
+    TermCon:new FormControl('',[
+      Validators.requiredTrue
     ])
   });
 
@@ -69,12 +80,14 @@ export class FormularioReactivoComponent {
     if(this.FormularioReact.valid){
 
       const DatosForm=this.FormularioReact.value;
+      const nombre=DatosForm.nombre;
       const email=DatosForm.correo;
       const contraseña=DatosForm.contraseña;
       const opc=DatosForm.OpcionArray;
 
-      const EncUser=this.usuarios.some(i=>i.correo===email&&i.contraseña===contraseña);
+      const EncUser=this.usuarios.some(i=>i.nombre===nombre&&i.correo===email&&i.contraseña===contraseña);
        const UsuarioLogueado={
+          nombre:nombre,
           correo:email,
           opc:opc,
           fecha:DatosForm.Calendario,

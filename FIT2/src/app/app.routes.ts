@@ -5,6 +5,8 @@ import { ServiciosFITComponent } from './servicios-fit/servicios-fit.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
+import { EditUsersComponent } from './edit-users/edit-users.component';
+import { EditclientesComponent } from './editclientes/editclientes.component';
 
 export const routes: Routes = [
     {path:'home',component:HomeComponent},
@@ -13,6 +15,9 @@ export const routes: Routes = [
     {path:'Contacto',component:ContactoComponent},
     {path:'InicioSesion',component:FormularioReactivoComponent},
     {path:'instructor/:id',component:InstructorComponent},
+    {path:'EditarUsers',component:EditUsersComponent},
+    {path:'EditarClientes',component:EditclientesComponent},
+    
     {path:'**',pathMatch:'full',redirectTo:'home'},
     
 ];

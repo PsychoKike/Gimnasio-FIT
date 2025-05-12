@@ -1,0 +1,10 @@
+<h2>Editar usuarios</h2>
+
+@for (registro of registros; track registro; let i = $index) {
+    <app-edit-users-hijo 
+        [registro]="registro" 
+        [index]="i"
+        (actualizar)="actualizarRegistro(i, $event)"
+        (eliminar)="eliminarRegistro($event)">
+    </app-edit-users-hijo>
+}

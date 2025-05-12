@@ -1,4 +1,30 @@
 <form [formGroup]="FormularioReact" class="form-container" (ngSubmit)="Subir()">
+
+<div class="mb-3">
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Nombre del usuario</mat-label>
+    <input matInput type="email" formControlName="nombre" id="exampleInputEmail1">
+  </mat-form-field>
+
+  @if (FormularioReact.get('nombre')?.invalid && FormularioReact.get('nombre')?.touched) {
+    @if (FormularioReact.get('nombre')?.errors?.['required']) {
+      <div class="text-danger">Añade el nombre</div>
+    } @else {
+      @if (FormularioReact.get('nombre')?.errors?.['minlength']) {
+        <div class="text-danger">El nombre debe tener al menos 3 letras</div>
+      } @else {
+        @if (FormularioReact.get('nombre')?.errors?.['maxlength']) {
+          <div class="text-danger">El nombre es demasiado largo, solo se permiten 50 caracteres</div>
+        }@else {
+          @if (FormularioReact.get('nombre')?.errors?.['pattern']) {
+            <div class="text-danger">No se permiten Caracteres especiales en el nombre</div>
+          }
+        }
+      }
+    }
+  }
+</div>
+
 <div class="mb-3">
   <mat-form-field appearance="fill" class="w-100">
     <mat-label>Email address</mat-label>
@@ -50,6 +76,17 @@
   </mat-form-field>
   @if (FormularioReact.get('OpcionArray')?.invalid && FormularioReact.get('OpcionArray')?.touched) {
     <div class="text-danger">Debes seleccionar una opción.</div>
+  }
+</div>
+
+<div class="mb-3">
+  <p>
+    <mat-slide-toggle formControlName="TermCon">
+      Acepta los términos y condiciones
+    </mat-slide-toggle>
+  </p>
+  @if (FormularioReact.get('TermCon')?.invalid && FormularioReact.get('TermCon')?.touched) {
+    <div class="text-danger">Debes aceptar los términos y condiciones para continuar.</div>
   }
 </div>
 

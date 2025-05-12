@@ -24,8 +24,8 @@
                 {{correo}}
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Reporte de usuarios</a></li>
-                <li><a class="dropdown-item" href="#">Reporte de inicio de Sesion</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/EditarClientes']">Reporte de usuarios</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/EditarUsers']">Reporte de inicio de Sesion</a></li>
                 <li><a class="dropdown-item" href="#" (click)="cerrarSesion()">Cerrar Sesion</a></li>
               </ul>
             </li>

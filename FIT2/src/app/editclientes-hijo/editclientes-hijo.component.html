@@ -1,0 +1,126 @@
+<div class="card mb-3 p-3">
+  <form (ngSubmit)="editando ? guardarCambios() : null">
+    <div class="row g-3 align-items-center">
+
+      <!-- Número de registro -->
+      <div class="col-auto">
+        <label class="form-label mb-0">#{{ index + 1 }}</label>
+      </div>
+
+      <!-- Nombre -->
+      <div class="col-md-4">
+        <label class="form-label">Nombre</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Nombre</span>
+          <input 
+            type="text" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevoNombre" 
+            name="nombre{{ index }}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Edad -->
+      <div class="col-md-3">
+        <label class="form-label">Edad</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Edad</span>
+          <input 
+            type="number" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevaEdad"
+            name="edad{{index}}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Género -->
+      <div class="col-md-3">
+        <label class="form-label">Género</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Género</span>
+          <input 
+            type="text" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevoGenero"
+            name="genero{{index}}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Membresía -->
+      <div class="col-md-3">
+        <label class="form-label">Membresía</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Membresía</span>
+          <input 
+            type="text" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevaMembresia"
+            name="membresia{{index}}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Actividades -->
+      <div class="col-md-3">
+        <label class="form-label">Actividades</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Actividades</span>
+          <input 
+            type="text" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevaActividad"
+            name="actividad{{index}}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Fecha de registro -->
+      <div class="col-md-3">
+        <label class="form-label">Fecha de Registro</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Fecha</span>
+          <input 
+            type="date" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevaFechaRegistro"
+            name="fechaRegistro{{index}}" 
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Acciones -->
+      <div class="col-12 text-end">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-warning" (click)="toggleEditar()">
+            {{ editando ? 'Cancelar' : 'Editar' }}
+          </button>
+          @if (editando) {
+            <button type="submit" class="btn btn-outline-success">
+                 Guardar
+          </button>
+          }
+
+          <button type="button" class="btn btn-outline-danger" (click)="eliminarRegistro()">
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

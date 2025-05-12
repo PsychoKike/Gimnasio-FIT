@@ -1,0 +1,71 @@
+<div class="card mb-3 p-3">
+  <form (ngSubmit)="editando ? guardarCambios() : null">
+    <div class="row g-3 align-items-center">
+
+      <!-- Número de registro -->
+      <div class="col-auto">
+        <label class="form-label mb-0">#{{ index + 1 }}</label>
+      </div>
+
+      <!-- Correo -->
+      <div class="col-md-4">
+        <label class="form-label">Correo</label>
+        <input 
+            type="email" 
+            class="form-control" 
+            [readonly]="!editando" 
+            [(ngModel)]="nuevoCorreo" 
+            name="correo{{ index }}" 
+            placeholder="Correo electrónico" 
+            required
+        />
+      </div>
+
+      <!-- Rol -->
+      <div class="col-md-3">
+        <label class="form-label">Nombre</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          [readonly]="!editando" 
+          [(ngModel)]="nuevoNombre"
+          name="nombre{{index}}"
+          [value]="registro.nombre" 
+        />
+      </div>
+
+      <!-- Fecha -->
+      <div class="col-md-3">
+        <label class="form-label">Fecha</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          [readonly]="!editando" 
+          [(ngModel)]="nuevaFecha"
+          name="fecha{{index}}"
+          [value]="registro.fecha" 
+        />
+      </div>
+
+      <!-- Acciones -->
+      <div class="col-12 text-end">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-warning" (click)="toggleEditar()">
+            {{ editando ? 'Cancelar' : 'Editar' }}
+          </button>
+          @if (editando) {
+           <button  type="submit" class="btn btn-outline-success">
+            Guardar
+          </button>
+          }
+    
+
+          <button type="button" class="btn btn-outline-danger" (click)="eliminarRegistro()">
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
