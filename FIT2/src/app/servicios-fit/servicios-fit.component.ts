@@ -22,7 +22,7 @@ interface Cliente {
 })
 export class ServiciosFITComponent {
   nombre = '';
-  edad = 10;
+  edad = 15;
   membresia = '';
   actividades: string[] = [];
   genero = '';
@@ -49,10 +49,16 @@ export class ServiciosFITComponent {
       this.mostrarMensaje('Error', '¡Por favor coloca tu nombre.!', 'error');
       return;
     }
-    if (this.edad < 10 || this.edad > 100) {
-      this.mostrarMensaje('Error', '¡¡La edad debe estar entre 10 y 100 años.!!', 'error');
+    if (this.edad < 15 || this.edad > 100) {
+      this.mostrarMensaje('Error', '¡¡La edad debe estar entre 15 y 100 años.!!', 'error');
       return;
     }
+
+    if(!this.actividades.length) {
+      this.mostrarMensaje('Error', '¡Por favor selecciona al menos una actividad!', 'error');
+      return; 
+    }
+
 
     if (!this.membresia) {
       this.mostrarMensaje('Error', 'Por favor coloca la membresia que deseas.', 'error');
@@ -93,7 +99,7 @@ export class ServiciosFITComponent {
 
   borrarFormulario(): void {
     this.nombre = '';
-    this.edad = 10;
+    this.edad = 15;
     this.membresia = '';
     this.actividades = [];
     this.genero = '';
