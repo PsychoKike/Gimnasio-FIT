@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary colorperz">
     <div class="container-fluid">
-      <img src="images/FITLOGO.png" alt="" [routerLink]="['/home']" style="cursor: pointer; height: 130px; width: auto; margin-left: 30px; margin-right: 40px;">
+      <img [src]="logo" alt="" [routerLink]="['/home']" style="cursor: pointer; height: 130px; width: auto; margin-left: 30px; margin-right: 40px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,9 +36,10 @@
           }
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input class="form-control me-2" type="text" placeholder="Busca un instructor" aria-label="Busca un instructor" #buscarTexto (keyup.enter)="buscarinstructor(buscarTexto.value)">
+          <button class="btn btn-outline-success" (click)="buscarinstructor(buscarTexto.value)" type="button">Search</button>
         </form>
+
       </div>
     </div>
   </nav>

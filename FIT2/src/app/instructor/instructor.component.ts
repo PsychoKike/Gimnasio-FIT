@@ -21,7 +21,6 @@ export class InstructorComponent implements OnInit {
   ngOnInit(): void {
     console.log("Entre");
     this.servicioApiService.retornar().subscribe({
-      
       next: this.successRequest.bind(this),
       error: (err) => {console.log(err)},
     });

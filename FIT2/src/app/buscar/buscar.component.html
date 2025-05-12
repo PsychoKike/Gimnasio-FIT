@@ -1,0 +1,18 @@
+<div class="Letra">
+  @if(instructor) {
+    <h1 class="animate__animated animate__bounce">{{ instructor.instructor }}</h1>
+    <hr>
+    <div class="row animate__animated animate__fadeIn animate__fast">
+      <div class="col md-4 text-center">
+        <img src="{{ instructor.imagen2 }}" alt="" class="img-fluid">
+        <br><br>
+        <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar</a>
+      </div>
+      <div class="col md-8">
+        <h3>{{ instructor.instructor }}</h3>
+        <hr>
+        <p>{{ instructor.descInstructor }}</p>
+      </div>
+    </div>
+  }
+</div>

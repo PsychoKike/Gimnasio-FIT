@@ -25,6 +25,7 @@ export class ServiciosFITComponent {
   edad = 15;
   membresia = '';
   actividades: string[] = [];
+  
   genero = '';
   fechaRegistro = '';
   clientes: Cliente[] = JSON.parse(localStorage.getItem('clientes') || '[]');
