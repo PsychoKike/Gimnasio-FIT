@@ -11,6 +11,6 @@ export class ServicioApiService {
 
  
   retornar() {
-    return this.http.get("https://prueba22.free.beeceptor.com").pipe(take(1));
+    return this.http.get("https://kkyaaa.free.beeceptor.com/").pipe(take(1));
   }
 }
