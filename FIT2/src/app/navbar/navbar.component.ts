@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { BuscarComponent } from '../buscar/buscar.component';
 
 @Component({
   selector: 'app-navbar',
@@ -8,14 +9,23 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  RecUser: any = null; // Esta variable nos ayudará a recuperar el usuario
+  RecUser: any = null;
   correo!: string;
   FlagInicio: boolean=false;
 
+  logo = "FITLOGO.png";
+
+  constructor(private router: Router) { }
+  buscarinstructor(nombre: string) {
+    this.router.navigate(['/buscar', nombre]);
+  }
+
+
+
 ngOnInit(): void {
   const historial = JSON.parse(localStorage.getItem('InicioSesion') || '[]');
-  this.RecUser = historial[historial.length - 1]; // Último usuario que inició sesión
-  this.correo = this.RecUser.correo; // Aquí sí obtienes el correo correctamente
+  this.RecUser = historial[historial.length - 1]; 
+  this.correo = this.RecUser.correo;
   this.FlagInicio=this.RecUser.Flag;
   console.log(this.FlagInicio,historial.length);
 

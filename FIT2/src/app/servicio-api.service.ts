@@ -7,8 +7,10 @@ import { take } from 'rxjs';
 })
 export class ServicioApiService {
 
-  constructor(private http: HttpClient) { };
-  retornar(){
-    return this.http.get("https://pruebaccc.free.beeceptor.com").pipe(take(1));
+  constructor(private http: HttpClient) { }
+
+ 
+  retornar() {
+    return this.http.get("https://prueba22.free.beeceptor.com").pipe(take(1));
   }
 }
