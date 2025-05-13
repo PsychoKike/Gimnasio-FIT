@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { BuscarComponent } from '../buscar/buscar.component';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule],
+  imports: [RouterModule,NgClass],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -38,5 +39,15 @@ cerrarSesion():void{
   this.FlagInicio=false;
   location.reload();
 }
+
+navbarEstiloLogueado = {
+  'background-color': '#4CAF50',  // Por ejemplo, verde cuando logueado
+  'color': 'white'
+};
+
+navbarEstiloOriginal = {
+  'background-color': '#f8f9fa',  // Color original del navbar
+  'color': 'black'
+};
 
 }

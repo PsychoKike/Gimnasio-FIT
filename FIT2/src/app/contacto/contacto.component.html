@@ -2,36 +2,39 @@
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="display-4 fw-bold">Contacto</h2>
-      <p class="fs-5">En nuestro gimnasio valoramos la comunicación con nuestros clientes. Si deseas obtener información adicional, resolver dudas o compartir tus comentarios, estamos a tu disposición. Puedes comunicarte con nosotros a través de los siguientes medios:</p>
-      <ul class="list-unstyled fs-5">
-        <li><strong>Teléfono:</strong> +52 449 479 1119</li>
-        <li><strong>Correo Electrónico:</strong> GymFit12.gmail.mx</li>
-        <li><strong>Dirección:</strong> Av. Salud y Bienestar 123, Ciudad Fit, MX</li>
-      </ul>
-      <p class="fs-5">Nuestro equipo estará encantado de ayudarte con cualquier consulta o solicitud. No dudes en ponerte en contacto con nosotros.</p>
-        <p class="fs-5" style="color: rgb(8, 0, 0);">Proyecto universitario creado por: </p>
     </div>
+
+    <!-- Tarjeta para los datos de contacto -->
+    <div class="card shadow-lg mb-5 border-0" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <div class="card-body">
+        <p class="fs-5">
+          En nuestro gimnasio valoramos la comunicación con nuestros clientes. Si deseas obtener información adicional, resolver dudas o compartir tus comentarios, estamos a tu disposición. Puedes comunicarte con nosotros a través de los siguientes medios:
+        </p>
+        <ul class="list-unstyled fs-5">
+          <li><strong>Teléfono:</strong> +52 449 479 1119</li>
+          <li><strong>Correo Electrónico:</strong> GymFit12.gmail.mx</li>
+          <li><strong>Dirección:</strong> Av. Salud y Bienestar 123, Ciudad Fit, MX</li>
+        </ul>
+        <p class="fs-5">Nuestro equipo estará encantado de ayudarte con cualquier consulta o solicitud. No dudes en ponerte en contacto con nosotros.</p>
+        <p class="fs-5 fw-semibold" style="color: rgb(8, 0, 0);">Proyecto universitario creado por:</p>
+      </div>
+    </div>
+
+    <!-- Tarjetas de creadores -->
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card h-100 shadow-sm border-0">
-              <img style="height: 330px;" src="imgchris.jpg" class="card-img-top" alt="Creador 1">
-              <div class="card-body">
-                <h5 class="card-title">Christian Isaac Martinez Sanchez</h5>
-                <p class="card-text">Programador </p>
+          @for (c of creadores; track $index) {
+            <div class="col">
+              <div class="card h-100 shadow-lg border-0" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                <img [src]="c.imagen" style="height: 330px;" class="card-img-top" alt="Foto de {{ c.nombre }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ c.nombre }}</h5>
+                  <p class="card-text">{{ c.puesto }}</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow-sm border-0">
-              <img style="max-height: 330px;" src="imgkikin.jpg" class="card-img-top" alt="Creador 2">
-              <div class="card-body">
-                <h5 class="card-title">Enrique Amador Macias</h5>
-                <p class="card-text">Programador</p>
-              </div>
-            </div>
-          </div>
+          }
         </div>
       </div>
     </div>

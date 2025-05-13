@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary colorperz">
+<nav class="navbar navbar-expand-lg bg-body-tertiary"
+     [ngClass]="FlagInicio ? 'admin-navbar' : 'colorperz'">
     <div class="container-fluid">
       <img [src]="logo" alt="" [routerLink]="['/home']" style="cursor: pointer; height: 130px; width: auto; margin-left: 30px; margin-right: 40px;">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,11 +36,23 @@
             </li>
           }
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="text" placeholder="Busca un instructor" aria-label="Busca un instructor" #buscarTexto (keyup.enter)="buscarinstructor(buscarTexto.value)">
-          <button class="btn btn-outline-success" (click)="buscarinstructor(buscarTexto.value)" type="button">Search</button>
-        </form>
-
+            <form class="d-flex align-items-center search-bar" role="search">
+              <input
+                class="form-control custom-search-input"
+                type="text"
+                placeholder="Busca un instructor"
+                aria-label="Busca un instructor"
+                #buscarTexto
+                (keyup.enter)="buscarinstructor(buscarTexto.value)"
+              />
+              <button
+                class="btn custom-search-button"
+                (click)="buscarinstructor(buscarTexto.value)"
+                type="button"
+              >
+                Buscar
+              </button>
+            </form>
       </div>
     </div>
   </nav>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { creador } from './interfaceCread';
+import { Creadores } from './interFaceCreadlleno';
 
 @Component({
   selector: 'app-contacto',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './contacto.component.css'
 })
 export class ContactoComponent {
-
+  creadores: creador[] = Creadores;
 }

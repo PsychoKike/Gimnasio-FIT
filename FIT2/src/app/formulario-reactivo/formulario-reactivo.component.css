@@ -28,16 +28,18 @@
   color: #f44336;
 }
 
-.btn {
-  background-color: #e5ff00;
+.form-btn {
+  background-color: #ffb536!important;
   color: rgb(0, 0, 0);
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 1rem;
+  border: none;
 }
 
-.btn:hover {
+.form-btn:hover {
   background-color: #000000;
+  color: #ffffff;
 }
 
 
